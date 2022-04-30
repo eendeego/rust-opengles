@@ -529,7 +529,7 @@ pub fn get_program_info_log(program: GLuint, max_length: GLsizei) -> Option<Stri
             program,
             max_length,
             &mut length,
-            log.as_mut_vec().as_mut_ptr() as *mut i8,
+            log.as_mut_vec().as_mut_ptr() as *mut GLchar,
         );
 
         if length > 0 {
@@ -572,7 +572,7 @@ pub fn get_shader_info_log(shader: GLuint, max_length: GLsizei) -> Option<String
             shader,
             max_length,
             &mut length,
-            log.as_mut_vec().as_mut_ptr() as *mut i8,
+            log.as_mut_vec().as_mut_ptr() as *mut GLchar,
         );
 
         if length > 0 {
